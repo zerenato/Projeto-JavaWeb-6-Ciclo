@@ -14,18 +14,20 @@
 	  			<table>
 	    			<tr>
 	    				<td><h:outputText value="Login"/></td>
-	    				<td><h:inputText value="#{loginController.user.login}"/></td>
+	    				<td><h:inputText value="#{loginController.user.login}" required="true" requiredMessage="#{msg['login.required']}">
+	    						<f:validateLength maximum="10"/></h:inputText></td>
 	    			</tr>
 	    			<tr>
 	      				<td><h:outputText value="Senha"></h:outputText></td>
-	      				<td><h:inputSecret value="#{loginController.user.password}"/></td>
+	      				<td><h:inputSecret value="#{loginController.user.password}" required="true" requiredMessage="#{msg['password.required']}">
+	      						<f:validateLength maximum="20"/></h:inputSecret></td>
 	    			</tr>
 	    			<tr>
 	    				<td/>
 	    				<td><h:commandButton value="Login" action="#{loginController.doLogin()}"/></td>
 	    			</tr>
 	  			</table>
-				<h:messages/>
+				<h:messages errorClass="errorMessage" infoClass="infoMessage" warnClass="warnMessage"/>
 			</center>
 		</h:form>
 	</body> 

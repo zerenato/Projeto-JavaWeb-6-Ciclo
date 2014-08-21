@@ -20,22 +20,39 @@ public class LoginController implements Serializable {
 	@Inject
 	private User user;
 	
+	User[] users;
+	
+	public void setAdmin()
+	{
+		users = new User[20];
+		User admin = new User();
+		User buyer = new User();
+		
+		admin.setLogin("admin");
+		admin.setPassword("admin");
+		admin.setRole("admin");
+		
+		buyer.setLogin("buyer");
+		buyer.setPassword("buyer");
+		buyer.setRole("buyer");
+		
+		users[0] = admin;
+		users[1] = buyer;
+	}
+	
 	public String doLogin()
-	{	
-		if(user.getLogin().equals("admin") 
-				&& user.getPassword().equals("admin"))
-		{	
-			//user.setRole("jogador");
-			/*
-			final String mensagemLogin = messages.getString("login.obrigatorio");
-			System.out.println(mensagemLogin);
-			System.out.println("Data de aniversário: " + this.aniversario);
-			*/
-			return "success";
-		}
-		else
+	{
+		//String role;
+		
+		setAdmin();
+		for(User user:users)
 		{
-			return "failure";
+			if(this.user.getLogin().equals(user.getLogin()) && this.user.getPassword().equals(user.getPassword()))
+			{
+				//role = user.getRole();
+				return "success";
+			}
 		}
+		return "failure";
 	}
 }
