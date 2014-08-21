@@ -1,11 +1,38 @@
-<?xml version="1.0" encoding="ISO-8859-1" ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-<title>Criar/Editar Usuário</title>
-</head>
-<body>
-		<!-- Página para criação de usuário e atualização de seus dados  -->
-</body>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"> 
+
+<h:head>
+	<h:messages />
+</h:head> 
+<body> 
+<h2>#{msg['formulario.login']}</h2>
+<h:form>
+  <table border="1">
+    <tr>
+    <td>#{msg['login']}</td>
+    <td>
+    	<h:inputText value="#{controleUsuario.login}" required="true" requiredMessage="Preenchimento de login Ã© obrigatÃ³rio!" />
+    </td>
+    </tr>
+    <tr>
+      <td>#{msg['senha']}</td>
+      <td>
+      <h:inputSecret value="#{usuario.senha}" required="true" requiredMessage="#{msg['senha.obrigatorio']}">
+      	<f:validateLength minimum="2" />
+      </h:inputSecret>
+      </td>
+    </tr>
+    <tr>
+    <td><h:commandButton value="Logar" action="#{controleUsuario.realizarCadastro()}" /></td>
+    </tr>
+  
+  </table>
+
+
+</h:form>
+
+</body> 
 </html>
