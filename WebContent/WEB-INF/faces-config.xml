@@ -15,7 +15,7 @@
 		</locale-config>
 	</application>
 	
-	
+	<!-- 
 	<navigation-rule>
 		<display-name>login.xhtml</display-name>
 		<from-view-id>/login.xhtml</from-view-id>
@@ -34,8 +34,8 @@
 			<redirect />
 		</navigation-case>
 	</navigation-rule>
-	
-	<!--  
+	-->
+	 
 	<navigation-rule>
 		<display-name>login.xhtml</display-name>
 		<from-view-id>/login.xhtml</from-view-id>
@@ -63,6 +63,6 @@
 			<redirect />
 		</navigation-case>
 	</navigation-rule>
-	-->
+
 	
 </faces-config>

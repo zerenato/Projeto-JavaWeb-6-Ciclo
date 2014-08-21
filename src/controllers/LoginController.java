@@ -1,10 +1,10 @@
-package controller;
+package controllers;
 
 import java.io.Serializable;
+
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
-
 import lombok.Getter;
 import lombok.Setter;
 import model.User;
@@ -20,9 +20,9 @@ public class LoginController implements Serializable {
 	@Inject
 	private User user;
 	
-	User[] users;
+	private User[] users;
 	
-	public void setAdmin()
+	public void setUsers()
 	{
 		users = new User[20];
 		User admin = new User();
@@ -42,15 +42,15 @@ public class LoginController implements Serializable {
 	
 	public String doLogin()
 	{
-		//String role;
+		String role;
 		
-		setAdmin();
+		this.setUsers();
 		for(User user:users)
 		{
 			if(this.user.getLogin().equals(user.getLogin()) && this.user.getPassword().equals(user.getPassword()))
 			{
-				//role = user.getRole();
-				return "success";
+				role = user.getRole();
+				return role;
 			}
 		}
 		return "failure";

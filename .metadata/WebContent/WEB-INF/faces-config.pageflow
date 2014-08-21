@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf14085870432070" configfile="/Projeto-JavaWeb-6-Ciclo/WebContent/WEB-INF/faces-config.xml">
-  <nodes xsi:type="pageflow:PFPage" name="admin/userlist.xhtml" x="552" y="108" id="pf14085985650067" referenceLink="//@navigationRule.2/@navigationCase.0/@toViewId|" inlinks="pf140860245286710" path="/admin/userlist.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="login.xhtml" x="828" y="216" id="pf140860245286711" referenceLink="//@navigationRule.2/@fromViewId|" outlinks="pf140860245286712 pf140860245286713 pf140860245286710" inlinks="pf140860245286712" path="/login.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="buyer/maintenance.xhtml" x="420" y="384" id="pf140860245286714" referenceLink="//@navigationRule.1/@navigationCase.0/@toViewId|" inlinks="pf140860245286713" path="/buyer/maintenance.xhtml"/>
-  <links id="pf140860245286712" target="pf140860245286711" source="pf140860245286711" outcome="failure" redirect="true">
-    <bendPoints d1Width="110" d1Height="-85" d2Width="110" d2Height="-85"/>
-  </links>
-  <links id="pf140860245286713" target="pf140860245286714" source="pf140860245286711" outcome="buyer" redirect="true"/>
-  <links id="pf140860245286710" target="pf14085985650067" source="pf140860245286711" outcome="admin" redirect="true"/>
+  <nodes xsi:type="pageflow:PFPage" name="admin/userlist.xhtml" x="122" y="178" id="pf14085985650067" referenceLink="//@navigationRule.4/@navigationCase.0/@toViewId|" inlinks="pf14086477247280" path="/admin/userlist.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="login.xhtml" x="122" y="562" id="pf140860245286711" referenceLink="//@navigationRule.4/@fromViewId|" outlinks="pf14086477247281 pf14086477247282 pf14086477247280" inlinks="pf14086477247281" path="/login.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="buyer/maintenance.xhtml" x="338" y="562" id="pf140860245286714" referenceLink="//@navigationRule.3/@navigationCase.0/@toViewId|" inlinks="pf14086477247282" path="/buyer/maintenance.xhtml"/>
+  <links id="pf14086477247281" target="pf140860245286711" source="pf140860245286711" outcome="failure" redirect="true"/>
+  <links id="pf14086477247282" target="pf140860245286714" source="pf140860245286711" outcome="buyer" redirect="true"/>
+  <links id="pf14086477247280" target="pf14085985650067" source="pf140860245286711" outcome="admin" redirect="true"/>
 </pageflow:Pageflow>
