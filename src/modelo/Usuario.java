@@ -1,7 +1,6 @@
 package modelo;
 
 import java.io.Serializable;
-import java.util.Date;
 
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
@@ -13,6 +12,7 @@ import lombok.NoArgsConstructor;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
+import java.util.Date;
 
 @RequiredArgsConstructor
 @NoArgsConstructor(access = AccessLevel.PROTECTED)

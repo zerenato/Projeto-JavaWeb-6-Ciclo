@@ -7,14 +7,20 @@ import java.util.ResourceBundle;
 
 import i18n.*;
 
-import javax.faces.bean.ManagedProperty;
+import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
+import javax.inject.Named;
+import lombok.Getter;
+import lombok.Setter;
 
 import modelo.Usuario;
 
+@Getter
+@Setter
+@Named
+@RequestScoped
 public class ControleUsuario implements Serializable{
 	
-	//@ManagedProperty(value = "#{controleUsuario}")
 	private static final long serialVersionUID = 1L;
 
 	private String login;
@@ -38,6 +44,7 @@ public class ControleUsuario implements Serializable{
 	
 	public String realizarCadastro()
 	{	
+		javax.swing.JOptionPane.showMessageDialog(null, "CHEGOU NO MÉTODOOOOOOOOOOOOOOOOOOOOO");
 		return "falha";
 	}
 }
