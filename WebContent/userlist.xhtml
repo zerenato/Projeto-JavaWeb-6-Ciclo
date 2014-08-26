@@ -1,11 +1,50 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
 <title>Lista de usuários</title>
-</head>
-<body>
-		<!--  Essa página deve conter a lista de usuários com as opções de criar, atualizar e deletar -->
-</body>
+</h:head>
+<h:body>
+<h:body>
+<h:form>
+<h:messages></h:messages>
+<h:dataTable value="#{alunoBean.listaAlunos}" var="alunos" rules="rowns" cellpadding="5">
+<f:facet name="caption">
+A lista a seguir exibe a relação de todos os alunos cadastrado.
+</f:facet>
+<f:facet name="header">Listagem de alunos</f:facet>
+<f:facet name="footer">Fim listagem de alunos</f:facet>
+<h:column>
+<f:facet name="header">Matricula</f:facet>
+#{alunos.matricula}
+</h:column>
+ 
+<h:column>
+<f:facet name="header">Nome</f:facet>
+#{alunos.nome}
+</h:column>
+ 
+<h:column>
+<f:facet name="header">Matricula</f:facet>
+#{alunos.matricula}
+</h:column>
+<h:column>
+<h:graphicImage library="imagens" name="sexo_#{alunos.sexo}.gif"></h:graphicImage>
+</h:column>
+<h:column>
+<h:commandLink action="#{alunoBean.editar}">
+<h:graphicImage library="imagens" name="editar.gif"  style="border: 0"></h:graphicImage>
+<f:setPropertyActionListener target="#{alunoBean.aluno}" value="#{alunos}"></f:setPropertyActionListener>
+</h:commandLink>
+</h:column>
+<h:column>
+<h:commandLink action="#{alunoBean.excluir}">
+<h:graphicImage library="imagens"  name="excluir.gif" style="border: 0"></h:graphicImage>
+<f:setPropertyActionListener target="#{alunoBean.aluno}" value="#{alunos}"></f:setPropertyActionListener>
+</h:commandLink>
+</h:column>
+</h:dataTable>
+</h:form>
+</h:body>
 </html>
