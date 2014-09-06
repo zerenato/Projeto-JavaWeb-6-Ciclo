@@ -3,17 +3,26 @@
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:ui="http://java.sun.com/jsf/facelets"> 
-
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-<title>#{inter['titulo.inicial']}</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Lista de usuários</title>
 </head>
 <body>
-<h2>#{inter['titulo.inicial']}</h2>
-
-
-      
-
-
+		<h:form>
+		  <table border="1">
+		  
+		
+    
+    
+   	<tr>
+    <td><h:commandButton value="Criar Usuario" action="#{userControler.irParaPaginaDeCadastro()}" /></td> 
+    
+    </tr>    
+	   
+	   
+    </table>
+    </h:form>
+		
+		
 </body>
 </html>

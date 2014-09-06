@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"> 
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Lista de usuários</title>
+</head>
+<body>
+		<h:form>
+		  <table border="1">
+		  
+		  <tr>
+		 <td>Nome: </td>
+	    <td>	     
+    	<h:inputText value="#{userControler.usuario.nome}"/>
+    </td>    	
+
+    </tr>
+    
+    
+    		  <tr>
+		 <td>Email: </td>
+	    <td>	     
+    	<h:inputText value="#{userControler.usuario.email}"/>
+    </td>    	
+
+    </tr>
+    
+        		  <tr>
+		 <td>Data de Nascimento: </td>
+	    <td>   
+        	   	<h:inputText value="#{userControler.usuario.dataNascimento}">
+	    		<f:convertDateTime pattern="dd/mm/yyyy" />
+	    		</h:inputText>
+    </td>    	
+
+    </tr>
+    <tr>
+    		 <td>Login: </td>
+	    <td>	     
+    	<h:inputText value="#{userControler.usuario.login}"/>
+    </td>    	
+
+    </tr>
+    
+        <tr>
+    		 <td>Senha: </td>
+	    <td>	     
+    	<h:inputText value="#{userControler.usuario.senha}"/>
+    </td>    	
+
+    </tr>
+    
+    
+    
+   	<tr>
+    <td><h:commandButton value="Salvar" action="#{userControler.criarComprador()}" /></td> 
+    <td><h:commandButton value="Listar" action="#{userControler.irParaPaginaDeListar()}" /></td>     
+    
+    </tr>   
+    
+    
+    
+	   
+	   
+    </table>
+    </h:form>
+		
+		
+</body>
+</html>

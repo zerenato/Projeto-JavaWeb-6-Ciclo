@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"> 
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Lista de usuários</title>
+</head>
+<body>
+		
+		<h:dataTable value="${userControler.listaDeCompradores}" var="c">
+		
+		<h:column>
+			<h:outputText value="${c.nome}"/>
+		</h:column>
+			<h:column>
+			<h:outputText value="${c.email}"/>
+		</h:column>
+			<h:column>
+			<h:outputText value="${c.dataNascimento}">
+				<f:convertDateTime pattern="dd/mm/yyyy" />			
+			</h:outputText>
+			
+		</h:column>
+			<h:column>
+			<h:outputText value="${c.login}"/>
+		</h:column>
+			<h:column>
+			<h:outputText value="${c.senha}"/>
+			
+		</h:column>
+		
+		<h:column>
+		<h:form>
+		<h:commandButton value="excluir" action="#{userControler.excluirComprador()}">		
+		<f:setPropertyActionListener target="#{userControler.usuario}" value="#{c}" />		
+		</h:commandButton>
+		</h:form>
+		</h:column>
+		
+		</h:dataTable>
+		
+			<h:form>
+		  <table border="1">
+		
+    
+    
+   	<tr>
+    <td><h:commandButton value="Adicionar Novo" action="#{userControler.irParaPaginaDeCadastro()}" /></td> 
+    
+    </tr>    
+	   
+	   
+    </table>
+    </h:form>
+		
+		
+		
+</body>
+</html>
